@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/filler.dir/main.c.o"
+  "CMakeFiles/filler.dir/sub.c.o"
+  "CMakeFiles/filler.dir/valid_type.c.o"
+  "CMakeFiles/filler.dir/init_write.c.o"
   "filler.pdb"
   "filler"
 )

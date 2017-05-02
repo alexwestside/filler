@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/nfs/2016/o/orizhiy/ClionProjects/filler/filler.h
+/Users/alex/ClionProjects/filler/filler.h
 libft/libft.h
-/nfs/2016/o/orizhiy/ClionProjects/filler/libft/libft.h
+/Users/alex/ClionProjects/filler/libft/libft.h
 libft/ft_printf.h
-/nfs/2016/o/orizhiy/ClionProjects/filler/libft/ft_printf.h
+/Users/alex/ClionProjects/filler/libft/ft_printf.h
 libft/get_next_line.h
-/nfs/2016/o/orizhiy/ClionProjects/filler/libft/get_next_line.h
+/Users/alex/ClionProjects/filler/libft/get_next_line.h
 
-/nfs/2016/o/orizhiy/ClionProjects/filler/libft/ft_printf.h
+/Users/alex/ClionProjects/filler/libft/ft_printf.h
 libft.h
-/nfs/2016/o/orizhiy/ClionProjects/filler/libft/libft.h
+/Users/alex/ClionProjects/filler/libft/libft.h
 stddef.h
 -
 stdarg.h
@@ -34,7 +34,7 @@ inttypes.h
 sys/types.h
 -
 
-/nfs/2016/o/orizhiy/ClionProjects/filler/libft/get_next_line.h
+/Users/alex/ClionProjects/filler/libft/get_next_line.h
 string.h
 -
 stdlib.h
@@ -46,9 +46,9 @@ fcntl.h
 stdio.h
 -
 libft.h
-/nfs/2016/o/orizhiy/ClionProjects/filler/libft/libft.h
+/Users/alex/ClionProjects/filler/libft/libft.h
 
-/nfs/2016/o/orizhiy/ClionProjects/filler/libft/libft.h
+/Users/alex/ClionProjects/filler/libft/libft.h
 stdlib.h
 -
 string.h
@@ -56,7 +56,7 @@ string.h
 unistd.h
 -
 
-/nfs/2016/o/orizhiy/ClionProjects/filler/main.c
+/Users/alex/ClionProjects/filler/main.c
 filler.h
-/nfs/2016/o/orizhiy/ClionProjects/filler/filler.h
+/Users/alex/ClionProjects/filler/filler.h
 

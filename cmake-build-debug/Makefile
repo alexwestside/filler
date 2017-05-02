@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /nfs/2016/o/orizhiy/ClionProjects/filler
+CMAKE_SOURCE_DIR = /Users/alex/ClionProjects/filler
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /nfs/2016/o/orizhiy/ClionProjects/filler/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/alex/ClionProjects/filler/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/2016/o/orizhiy/ClionProjects/filler/cmake-build-debug/CMakeFiles /nfs/2016/o/orizhiy/ClionProjects/filler/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/ClionProjects/filler/cmake-build-debug/CMakeFiles /Users/alex/ClionProjects/filler/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /nfs/2016/o/orizhiy/ClionProjects/filler/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/alex/ClionProjects/filler/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ filler/fast:
 	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/build
 .PHONY : filler/fast
 
+init_write.o: init_write.c.o
+
+.PHONY : init_write.o
+
+# target to build an object file
+init_write.c.o:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/init_write.c.o
+.PHONY : init_write.c.o
+
+init_write.i: init_write.c.i
+
+.PHONY : init_write.i
+
+# target to preprocess a source file
+init_write.c.i:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/init_write.c.i
+.PHONY : init_write.c.i
+
+init_write.s: init_write.c.s
+
+.PHONY : init_write.s
+
+# target to generate assembly for a file
+init_write.c.s:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/init_write.c.s
+.PHONY : init_write.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -150,6 +177,60 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/main.c.s
 .PHONY : main.c.s
 
+sub.o: sub.c.o
+
+.PHONY : sub.o
+
+# target to build an object file
+sub.c.o:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/sub.c.o
+.PHONY : sub.c.o
+
+sub.i: sub.c.i
+
+.PHONY : sub.i
+
+# target to preprocess a source file
+sub.c.i:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/sub.c.i
+.PHONY : sub.c.i
+
+sub.s: sub.c.s
+
+.PHONY : sub.s
+
+# target to generate assembly for a file
+sub.c.s:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/sub.c.s
+.PHONY : sub.c.s
+
+valid_type.o: valid_type.c.o
+
+.PHONY : valid_type.o
+
+# target to build an object file
+valid_type.c.o:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/valid_type.c.o
+.PHONY : valid_type.c.o
+
+valid_type.i: valid_type.c.i
+
+.PHONY : valid_type.i
+
+# target to preprocess a source file
+valid_type.c.i:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/valid_type.c.i
+.PHONY : valid_type.c.i
+
+valid_type.s: valid_type.c.s
+
+.PHONY : valid_type.s
+
+# target to generate assembly for a file
+valid_type.c.s:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/valid_type.c.s
+.PHONY : valid_type.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -159,9 +240,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... filler"
+	@echo "... init_write.o"
+	@echo "... init_write.i"
+	@echo "... init_write.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sub.o"
+	@echo "... sub.i"
+	@echo "... sub.s"
+	@echo "... valid_type.o"
+	@echo "... valid_type.i"
+	@echo "... valid_type.s"
 .PHONY : help
 
 
