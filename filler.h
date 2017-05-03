@@ -29,6 +29,9 @@ void fill_plato(char *line, t_filler **filler);
 void valid_init_token(char **line, t_filler **filler);
 void fill_token(char *line, t_filler **filler);
 
+void place_token(t_filler **filler);
+
+void free_filler(t_filler **filler);
 
 void ft_error(int error, int id);
 int isdigit_str(char *s, int id);

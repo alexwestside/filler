@@ -14,6 +14,10 @@ libft/ft_printf.h
 libft/get_next_line.h
 /Users/alex/ClionProjects/filler/libft/get_next_line.h
 
+/Users/alex/ClionProjects/filler/free.c
+filler.h
+/Users/alex/ClionProjects/filler/filler.h
+
 /Users/alex/ClionProjects/filler/init_write.c
 filler.h
 /Users/alex/ClionProjects/filler/filler.h
@@ -61,6 +65,10 @@ unistd.h
 -
 
 /Users/alex/ClionProjects/filler/main.c
+filler.h
+/Users/alex/ClionProjects/filler/filler.h
+
+/Users/alex/ClionProjects/filler/solution.c
 filler.h
 /Users/alex/ClionProjects/filler/filler.h
 

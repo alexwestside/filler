@@ -11,7 +11,7 @@ int main()
 
 	while (get_next_line(fd, &filler->line))
 		valid_and_init(ft_strsplit(filler->line, ' '), &filler);
-	place_token(filler);
-	free_filler(filler);
+	place_token(&filler);
+	free_filler(&filler);
 	return (1);
 }
