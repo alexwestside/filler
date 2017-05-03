@@ -123,6 +123,33 @@ filler/fast:
 	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/build
 .PHONY : filler/fast
 
+free.o: free.c.o
+
+.PHONY : free.o
+
+# target to build an object file
+free.c.o:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/free.c.o
+.PHONY : free.c.o
+
+free.i: free.c.i
+
+.PHONY : free.i
+
+# target to preprocess a source file
+free.c.i:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/free.c.i
+.PHONY : free.c.i
+
+free.s: free.c.s
+
+.PHONY : free.s
+
+# target to generate assembly for a file
+free.c.s:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/free.c.s
+.PHONY : free.c.s
+
 init_write.o: init_write.c.o
 
 .PHONY : init_write.o
@@ -176,6 +203,33 @@ main.s: main.c.s
 main.c.s:
 	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/main.c.s
 .PHONY : main.c.s
+
+solution.o: solution.c.o
+
+.PHONY : solution.o
+
+# target to build an object file
+solution.c.o:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/solution.c.o
+.PHONY : solution.c.o
+
+solution.i: solution.c.i
+
+.PHONY : solution.i
+
+# target to preprocess a source file
+solution.c.i:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/solution.c.i
+.PHONY : solution.c.i
+
+solution.s: solution.c.s
+
+.PHONY : solution.s
+
+# target to generate assembly for a file
+solution.c.s:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/solution.c.s
+.PHONY : solution.c.s
 
 sub.o: sub.c.o
 
@@ -240,12 +294,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... filler"
+	@echo "... free.o"
+	@echo "... free.i"
+	@echo "... free.s"
 	@echo "... init_write.o"
 	@echo "... init_write.i"
 	@echo "... init_write.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... solution.o"
+	@echo "... solution.i"
+	@echo "... solution.s"
 	@echo "... sub.o"
 	@echo "... sub.i"
 	@echo "... sub.s"

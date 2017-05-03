@@ -83,10 +83,16 @@
 		<Unit filename="/Users/alex/ClionProjects/filler/filler.h">
 			<Option target="filler"/>
 		</Unit>
+		<Unit filename="/Users/alex/ClionProjects/filler/free.c">
+			<Option target="filler"/>
+		</Unit>
 		<Unit filename="/Users/alex/ClionProjects/filler/init_write.c">
 			<Option target="filler"/>
 		</Unit>
 		<Unit filename="/Users/alex/ClionProjects/filler/main.c">
+			<Option target="filler"/>
+		</Unit>
+		<Unit filename="/Users/alex/ClionProjects/filler/solution.c">
 			<Option target="filler"/>
 		</Unit>
 		<Unit filename="/Users/alex/ClionProjects/filler/sub.c">

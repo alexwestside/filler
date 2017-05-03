@@ -153,12 +153,62 @@ CMakeFiles/filler.dir/init_write.c.o.provides: CMakeFiles/filler.dir/init_write.
 CMakeFiles/filler.dir/init_write.c.o.provides.build: CMakeFiles/filler.dir/init_write.c.o
 
 
+CMakeFiles/filler.dir/solution.c.o: CMakeFiles/filler.dir/flags.make
+CMakeFiles/filler.dir/solution.c.o: ../solution.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alex/ClionProjects/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/filler.dir/solution.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/filler.dir/solution.c.o   -c /Users/alex/ClionProjects/filler/solution.c
+
+CMakeFiles/filler.dir/solution.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/filler.dir/solution.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/alex/ClionProjects/filler/solution.c > CMakeFiles/filler.dir/solution.c.i
+
+CMakeFiles/filler.dir/solution.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/filler.dir/solution.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/alex/ClionProjects/filler/solution.c -o CMakeFiles/filler.dir/solution.c.s
+
+CMakeFiles/filler.dir/solution.c.o.requires:
+
+.PHONY : CMakeFiles/filler.dir/solution.c.o.requires
+
+CMakeFiles/filler.dir/solution.c.o.provides: CMakeFiles/filler.dir/solution.c.o.requires
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/solution.c.o.provides.build
+.PHONY : CMakeFiles/filler.dir/solution.c.o.provides
+
+CMakeFiles/filler.dir/solution.c.o.provides.build: CMakeFiles/filler.dir/solution.c.o
+
+
+CMakeFiles/filler.dir/free.c.o: CMakeFiles/filler.dir/flags.make
+CMakeFiles/filler.dir/free.c.o: ../free.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/alex/ClionProjects/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/filler.dir/free.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/filler.dir/free.c.o   -c /Users/alex/ClionProjects/filler/free.c
+
+CMakeFiles/filler.dir/free.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/filler.dir/free.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/alex/ClionProjects/filler/free.c > CMakeFiles/filler.dir/free.c.i
+
+CMakeFiles/filler.dir/free.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/filler.dir/free.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/alex/ClionProjects/filler/free.c -o CMakeFiles/filler.dir/free.c.s
+
+CMakeFiles/filler.dir/free.c.o.requires:
+
+.PHONY : CMakeFiles/filler.dir/free.c.o.requires
+
+CMakeFiles/filler.dir/free.c.o.provides: CMakeFiles/filler.dir/free.c.o.requires
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/free.c.o.provides.build
+.PHONY : CMakeFiles/filler.dir/free.c.o.provides
+
+CMakeFiles/filler.dir/free.c.o.provides.build: CMakeFiles/filler.dir/free.c.o
+
+
 # Object files for target filler
 filler_OBJECTS = \
 "CMakeFiles/filler.dir/main.c.o" \
 "CMakeFiles/filler.dir/sub.c.o" \
 "CMakeFiles/filler.dir/valid_type.c.o" \
-"CMakeFiles/filler.dir/init_write.c.o"
+"CMakeFiles/filler.dir/init_write.c.o" \
+"CMakeFiles/filler.dir/solution.c.o" \
+"CMakeFiles/filler.dir/free.c.o"
 
 # External object files for target filler
 filler_EXTERNAL_OBJECTS =
@@ -167,10 +217,12 @@ filler: CMakeFiles/filler.dir/main.c.o
 filler: CMakeFiles/filler.dir/sub.c.o
 filler: CMakeFiles/filler.dir/valid_type.c.o
 filler: CMakeFiles/filler.dir/init_write.c.o
+filler: CMakeFiles/filler.dir/solution.c.o
+filler: CMakeFiles/filler.dir/free.c.o
 filler: CMakeFiles/filler.dir/build.make
 filler: ../libft/libft.a
 filler: CMakeFiles/filler.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alex/ClionProjects/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable filler"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/alex/ClionProjects/filler/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable filler"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/filler.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -182,6 +234,8 @@ CMakeFiles/filler.dir/requires: CMakeFiles/filler.dir/main.c.o.requires
 CMakeFiles/filler.dir/requires: CMakeFiles/filler.dir/sub.c.o.requires
 CMakeFiles/filler.dir/requires: CMakeFiles/filler.dir/valid_type.c.o.requires
 CMakeFiles/filler.dir/requires: CMakeFiles/filler.dir/init_write.c.o.requires
+CMakeFiles/filler.dir/requires: CMakeFiles/filler.dir/solution.c.o.requires
+CMakeFiles/filler.dir/requires: CMakeFiles/filler.dir/free.c.o.requires
 
 .PHONY : CMakeFiles/filler.dir/requires
 

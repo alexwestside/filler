@@ -13,7 +13,7 @@ void ft_error(int error, int id)
 	else if (error == 2)
 		ft_printf("Incorrect PLATO inicialization!");
 	else if (error == 3 )
-		ft_printf("Incorrect 1st line of PLATO inicialization!");
+		ft_printf("Incorrect TOKEN inicialization!");
 	exit(0);
 }
 
@@ -22,10 +22,11 @@ int isdigit_str(char *s, int id)
 	char *p;
 	char *p1;
 
+	p1 = NULL;
 	p = s;
 	if (id == 2)
 		p1 = ft_strchr(s, ':');
-	while (id == 2 ? *p : p != p1)
+	while (id != 2 ? *p : p != p1)
 	{
 		if (!ft_isdigit(*p))
 			return (0);
