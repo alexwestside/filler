@@ -1,14 +1,14 @@
 
 #include "filler.h"
 
-void valid_init_plato(char **s, t_filler **filler)
+void valid_init_plato(char **s, t_map **plato, char *line)
 {
 	if (!ft_strcmp(s[0], "Plateau"))
 		if (isdigit_str(s[1], 0), 1)
 			if (isdigit_str(s[2], 0), 2)
 			{
-				init_plato(filler, ft_atoi(s[1]), ft_atoi(s[2]));
-				(*filler)->plato_info = (*filler)->line;
+				init_plato(plato, ft_atoi(s[1]), ft_atoi(s[2]));
+				(*plato)->info = line;
 			}
 			else
 				ft_error(2, 0);
@@ -28,8 +28,8 @@ void valid_init_player(char **s, t_filler **filler)
 				if (!ft_strcmp(s[3], ":"))
 					if (isprint_str(s[3]))
 					{
-						player == 1 ? (*filler)->p1 = (*filler)->line : 0;
-						player == 2 ? (*filler)->p2 = (*filler)->line : 0;
+						player == 1 ? (*filler)->player1 = (*filler)->line : 0;
+						player == 2 ? (*filler)->player2 = (*filler)->line : 0;
 						player++;
 					}
 					else
@@ -44,14 +44,14 @@ void valid_init_player(char **s, t_filler **filler)
 		ft_error(1, player);
 }
 
-void valid_init_token(char **line, t_filler **filler)
+void valid_init_token(char **str, t_map **token, char *line)
 {
-	if (!ft_strcmp(line[0], "Piece"))
-		if (isdigit_str(line[1], 1))
-			if (isdigit_str(line[2], 2))
+	if (!ft_strcmp(str[0], "Piece"))
+		if (isdigit_str(str[1], 1))
+			if (isdigit_str(str[2], 2))
 			{
-				init_token(filler, ft_atoi(line[1]), ft_atoi(line[2]));
-				(*filler)->token_info = (*filler)->line;
+				init_token(token, ft_atoi(str[1]), ft_atoi(str[2]));
+				(*token)->info = line;
 			}
 			else
 				ft_error(3, 0);
@@ -66,13 +66,13 @@ void valid_and_init(char **line, t_filler **filler)
 	if (!ft_strcmp(line[0], "$$$"))
 		valid_init_player(line, filler);
 	else if (!ft_strcmp(line[0], "Plateau"))
-		valid_init_plato(line, filler);
+		valid_init_plato(line, &((*filler)->plato), (*filler)->line);
 	else if (isdigit_str(line[0], 0) && !line[1])
 		return  ;
 	else if (isdigit_str(line[0], 0) && line[1])
-		fill_plato(line[1], filler);
+		fill_plato(line[1], &((*filler)->plato));
 	else if (!ft_strcmp(line[0], "Piece"))
-		valid_init_token(line, filler);
+		valid_init_token(line, &((*filler)->token), (*filler)->line);
 	else if (isprint_str(line[0]) && !line[1])
-		fill_token(line[0], filler);
+		fill_token(line[0], &((*filler)->token));
 }

@@ -3,52 +3,68 @@
 
 void filler_init(t_filler **filler)
 {
-	(*filler) = (t_filler *) malloc(sizeof(t_filler));
-	(*filler)->plato = NULL;
+	(*filler) = (t_filler *)malloc(sizeof(t_filler));
 	(*filler)->line = NULL;
-	(*filler)->plato_info = NULL;
-	(*filler)->p1 = NULL;
-	(*filler)->p2 = NULL;
-	(*filler)->token = NULL;
-	(*filler)->token_info = NULL;
+	(*filler)->player1 = NULL;
+	(*filler)->player2 = NULL;
+	(*filler)->plato = (t_map *)malloc(sizeof(t_map));
+	(*filler)->plato->info = NULL;
+	(*filler)->plato->map = NULL;
+	(*filler)->plato->x = 0;
+	(*filler)->plato->n = 0;
+	(*filler)->token = (t_map *)malloc(sizeof(t_map));
+	(*filler)->token->info = NULL;
+	(*filler)->token->map = NULL;
+	(*filler)->token->x = 0;
+	(*filler)->token->n = 0;
 }
 
-void init_plato(t_filler **filler, int x, int n)
+void init_plato(t_map **plato, int x, int n)
 {
-	if (!((*filler)->plato))
+	if (!((*plato)->x) || !((*plato)->n))
+	{
+		(*plato)->x = x;
+		(*plato)->n = n;
+	}
+	if (!((*plato)->map))
 	{
 		x++;
-		(*filler)->plato = (char **) malloc(sizeof(char *) * x);
-		(*filler)->plato[x] = NULL;
+		(*plato)->map = (char **) malloc(sizeof(char *) * x);
+		(*plato)->map[x] = NULL;
 	}
 }
 
-void fill_plato(char *line, t_filler **filler)
+void fill_plato(char *line, t_map **plato)
 {
 	int i;
 
 	i = 0;
-	while((*filler)->plato[i])
+	while((*plato)->map[i])
 		i++;
-	(*filler)->plato[i] = line;
+	(*plato)->map[i] = line;
 }
 
-void init_token(t_filler **filler, int x, int n)
+void init_token(t_map **token, int x, int n)
 {
-	if (!((*filler)->token))
+	if (!((*token)->x) || !((*token)->n))
+	{
+		(*token)->x = x;
+		(*token)->n = n;
+	}
+	if (!((*token)->map))
 	{
 		x++;
-		(*filler)->token = (char **) malloc(sizeof(char *) * x);
-		(*filler)->token[x] = NULL;
+		(*token)->map = (char **) malloc(sizeof(char *) * x);
+		(*token)->map[x] = NULL;
 	}
 }
 
-void fill_token(char *line, t_filler **filler)
+void fill_token(char *line, t_map **token)
 {
 	int i;
 
 	i = 0;
-	while ((*filler)->token[i])
+	while ((*token)->map[i])
 		i++;
-	(*filler)->token[i] = line;
+	(*token)->map[i] = line;
 }

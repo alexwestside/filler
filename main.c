@@ -8,7 +8,6 @@ int main()
 	t_filler *filler;
 
 	filler_init(&filler);
-
 	while (get_next_line(fd, &filler->line))
 		valid_and_init(ft_strsplit(filler->line, ' '), &filler);
 	place_token(&filler);

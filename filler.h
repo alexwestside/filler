@@ -6,28 +6,34 @@
 #include "libft/ft_printf.h"
 #include "libft/get_next_line.h"
 
-typedef struct	s_filler
+typedef struct		s_map
 {
-	char		*line;
-	char		*p1;
-	char		*p2;
-	char		*plato_info;
-	char		**plato;
-	char		*token_info;
-	char		**token;
-}				t_filler;
+	char			*info;
+	char 			**map;
+	int 			x;
+	int 			n;
+}					t_map;
+
+
+typedef struct		s_filler
+{
+	char			*line;
+	char			*player1;
+	char			*player2;
+	struct s_map 	*plato;
+	struct s_map 	*token;
+}					t_filler;
 
 void valid_and_init(char **line, t_filler **filler);
 void valid_init_player(char **s, t_filler **filler);
-void valid_init_plato(char **s, t_filler **filler);
-void init_token(t_filler **filler, int x, int n);
+void valid_init_plato(char **s, t_map **plato, char *line);
+void valid_init_token(char **str, t_map **token, char *line);
 
-void init_plato(t_filler **filler, int x, int n);
 void filler_init(t_filler **filler);
-
-void fill_plato(char *line, t_filler **filler);
-void valid_init_token(char **line, t_filler **filler);
-void fill_token(char *line, t_filler **filler);
+void init_plato(t_map **plato, int x, int n);
+void fill_plato(char *line, t_map **plato);
+void init_token(t_map **token, int x, int n);
+void fill_token(char *line, t_map **token);
 
 void place_token(t_filler **filler);
 
