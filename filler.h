@@ -22,6 +22,7 @@ typedef struct		s_filler
 	char			*player2;
 	struct s_map 	*plato;
 	struct s_map 	*token;
+	struct s_map	*place;
 }					t_filler;
 
 void valid_and_init(char **line, t_filler **filler);

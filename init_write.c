@@ -17,6 +17,11 @@ void filler_init(t_filler **filler)
 	(*filler)->token->map = NULL;
 	(*filler)->token->x = 0;
 	(*filler)->token->n = 0;
+	(*filler)->place = (t_map *)malloc(sizeof(t_map));
+	(*filler)->place->info = NULL;
+	(*filler)->place->map = NULL;
+	(*filler)->place->x = 0;
+	(*filler)->place->n = 0;
 }
 
 void init_plato(t_map **plato, int x, int n)
