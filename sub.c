@@ -53,10 +53,12 @@ int isprint_str(char *s)
 
 int ft_abs(int i, int x, int j ,int n)
 {
-	int res;
+	int res1;
+	int res2;
 
-	res = (i - x) + (j - n);
-	return (res < 0 ? res * -1 : res);
+	res1 = (i - x) < 0 ? (i - x) * -1 : (i - x);
+	res2 = (j - n) < 0 ? (j - n) * -1 : (j - n);
+	return (res1 + res2);
 }
 
 

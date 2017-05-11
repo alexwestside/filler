@@ -26,7 +26,7 @@ typedef struct		s_player
 typedef struct		s_filler
 {
 	char			*line;
-	int				**dist;
+	int			**dist;
 	struct s_player *player;
 	struct s_map 	*plato;
 	struct s_map 	*token;

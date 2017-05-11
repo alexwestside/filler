@@ -7,6 +7,7 @@ void fill_dist(t_filler **filler, int x, int n)
 	int j;
 
 	i = -1;
+	(*filler)->dist[x][n] = (*filler)->player->player_id == 1 ? -1 : -2;
 	while (++i < (*filler)->plato->x)
 	{
 		j = -1;
@@ -14,14 +15,10 @@ void fill_dist(t_filler **filler, int x, int n)
 		{
 			if ((*filler)->dist[i][j] == 0)
 				(*filler)->dist[i][j] = ft_abs(i, x, j ,n);
-			else if (!ft_isalpha((*filler)->dist[i][j]))
+			else if ((*filler)->dist[i][j] > 0)
 			{
 				if ((*filler)->dist[i][j] > ft_abs(i, x, j, n))
 					(*filler)->dist[i][j] = ft_abs(i, x, j, n);
-			}
-			else
-			{
-				(*filler)->dist[i][j] = ((*filler)->player->player_id == 1 ? 'X' : 'O');
 			}
 		}
 	}
