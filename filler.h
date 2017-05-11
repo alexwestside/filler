@@ -26,6 +26,7 @@ typedef struct		s_player
 typedef struct		s_filler
 {
 	char			*line;
+	int				**dist;
 	struct s_player *player;
 	struct s_map 	*plato;
 	struct s_map 	*token;
@@ -42,6 +43,7 @@ void init_plato(t_map **plato, int x, int n);
 void fill_plato(char *line, t_map **plato);
 void init_token(t_map **token, int x, int n);
 void fill_token(char *line, t_map **token);
+void init_dist(t_filler **filler);
 
 void place_token(t_filler **filler);
 
@@ -50,5 +52,10 @@ void free_filler(t_filler **filler);
 void ft_error(int error, int id);
 int isdigit_str(char *s, int id);
 int isprint_str(char *s);
+int ft_abs(int i, int x, int j ,int n);
+
+
+void print1(t_filler **filler);
+
 
 #endif //FILLER_FILLER_H

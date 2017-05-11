@@ -18,7 +18,7 @@ void valid_init_plato(char **s, t_map **plato, char *line)
 		ft_error(2, 0);
 }
 
-void player_identification(t_player **player, char *line)
+void player_identification(t_player **player)
 {
 	if (!strcmp((*player)->player1, "$$$ exec p1 : [./filler]"))
 		(*player)->player_id = 1;
@@ -39,7 +39,7 @@ void valid_init_player(char **s, t_filler **filler)
 						player == 1 ? (*filler)->player->player1 = (*filler)->line : 0;
 						player == 2 ? (*filler)->player->player2 = (*filler)->line : 0;
 						player++;
-						player_identification(&((*filler)->player), (*filler)->line);
+						player_identification(&((*filler)->player));
 					}
 					else
 						ft_error(1, player);

@@ -3,7 +3,7 @@
 
 int main()
 {
-	int fd = open("/nfs/2016/o/orizhiy/ClionProjects/filler/test", O_RDONLY);
+	int fd = open("/nfs/2016/o/orizhiy/ClionProjects/filler/test2", O_RDONLY);
 
 	t_filler *filler;
 

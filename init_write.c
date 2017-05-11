@@ -5,6 +5,7 @@ void filler_init(t_filler **filler)
 {
 	(*filler) = (t_filler *)malloc(sizeof(t_filler));
 	(*filler)->line = NULL;
+	(*filler)->dist = 0;
 	(*filler)->plato = (t_map *)malloc(sizeof(t_map));
 	(*filler)->plato->info = NULL;
 	(*filler)->plato->map = NULL;
@@ -39,7 +40,8 @@ void init_plato(t_map **plato, int x, int n)
 	{
 		x++;
 		(*plato)->map = (char **) malloc(sizeof(char *) * x);
-		(*plato)->map[x] = NULL;
+		while (x--)
+			(*plato)->map[x] = NULL;
 	}
 }
 
@@ -64,7 +66,8 @@ void init_token(t_map **token, int x, int n)
 	{
 		x++;
 		(*token)->map = (char **) malloc(sizeof(char *) * x);
-		(*token)->map[x] = NULL;
+		while (x--)
+			(*token)->map[x] = NULL;
 	}
 }
 
@@ -76,4 +79,18 @@ void fill_token(char *line, t_map **token)
 	while ((*token)->map[i])
 		i++;
 	(*token)->map[i] = line;
+}
+
+void init_dist(t_filler **filler)
+{
+	int i;
+
+	i = -1;
+	(*filler)->dist = (int **)malloc(sizeof(int *) * ((*filler)->plato->x + 1));
+	(*filler)->dist[(*filler)->plato->x + 1] = NULL;
+	while(++i < (*filler)->plato->x)
+	{
+		(*filler)->dist[i] = (int *)malloc(sizeof(int) * (*filler)->plato->n);
+		ft_bzero((*filler)->dist[i], (size_t) (*filler)->plato->n);
+	}
 }

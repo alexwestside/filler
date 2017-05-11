@@ -4,6 +4,4 @@
 void free_filler(t_filler **filler)
 {
 
-
-
 }

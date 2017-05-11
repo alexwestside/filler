@@ -50,3 +50,29 @@ int isprint_str(char *s)
 	}
 	return (1);
 }
+
+int ft_abs(int i, int x, int j ,int n)
+{
+	int res;
+
+	res = (i - x) + (j - n);
+	return (res < 0 ? res * -1 : res);
+}
+
+
+void print1(t_filler **filler)
+{
+	int i;
+	int j;
+
+	i = -1;
+	while (++i < (*filler)->plato->x)
+	{
+		j = -1;
+		while (++j < (*filler)->plato->n)
+		{
+			ft_printf("%3d", (*filler)->dist[i][j]);
+		}
+		ft_printf("\n");
+	}
+}

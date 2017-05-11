@@ -1,71 +1,53 @@
 
 #include "filler.h"
 
-int check_try_place(t_filler **filler)
+void fill_dist(t_filler **filler, int x, int n)
 {
-//	if ()
+	int i;
+	int j;
 
-
-	return (0);
+	i = -1;
+	while (++i < (*filler)->plato->x)
+	{
+		j = -1;
+		while (++j < (*filler)->plato->n)
+		{
+			if ((*filler)->dist[i][j] == 0)
+				(*filler)->dist[i][j] = ft_abs(i, x, j ,n);
+			else if (!ft_isalpha((*filler)->dist[i][j]))
+			{
+				if ((*filler)->dist[i][j] > ft_abs(i, x, j, n))
+					(*filler)->dist[i][j] = ft_abs(i, x, j, n);
+			}
+			else
+			{
+				(*filler)->dist[i][j] = ((*filler)->player->player_id == 1 ? 'X' : 'O');
+			}
+		}
+	}
+	print1(filler);
 }
 
-int try_place(t_filler **filler)
+void find_place_on_plato(t_filler **filler)
 {
 	int x;
 	int n;
 
 	x = -1;
-	while (++x <= (*filler)->token->x)
+	while (++x < (*filler)->plato->x)
 	{
 		n = -1;
-		while (++n <= (*filler)->token->n)
+		while (++n < (*filler)->plato->n)
 		{
-			if ((*filler)->token->map[x][n] == '*')
-			{
-				(*filler)->place->x += x;
-				(*filler)->place->n += n;
-				if (check_try_place(filler))
-					return (1);
-			}
+			if ((*filler)->plato->map[x][n] == ((*filler)->player->player_id == 1 ? 'X' : 'O'))
+					fill_dist(filler, x, n);
 		}
 	}
-	return (0);
-}
-
-int check_place(t_filler **filler, int x, int n)
-{
-	if ((*filler)->plato->map[x][n] == 'O')
-	{
-		(*filler)->place->x = x;
-		(*filler)->place->n = n;
-		return (1);
-	}
-	return (0);
-}
-
-int find_place_on_plato(t_filler **filler)
-{
-	int x;
-	int n;
-
-	x = -1;
-	while (++x <= (*filler)->plato->x)
-	{
-		n = -1;
-		while (++n <= (*filler)->token->n)
-		{
-			if (check_place(filler, x, n))
-			{
-				if (try_place(filler))
-					return (1);
-			}
-		}
-	}
-	return (0);
 }
 
 void place_token(t_filler **filler)
 {
-	if (find_place_on_plato(filler))
-		ft_printf("%s %s\n", (*filler)->place->x, (*filler)->place->n);
+	init_dist(filler);
+	find_place_on_plato(filler);
+	ft_printf("%s %s\n", (*filler)->place->x, (*filler)->place->n);
 }
