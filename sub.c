@@ -58,6 +58,8 @@ int ft_abs(int i, int x, int j ,int n)
 
 	res1 = (i - x) < 0 ? (i - x) * -1 : (i - x);
 	res2 = (j - n) < 0 ? (j - n) * -1 : (j - n);
+	if (res1 < 0 || res2 < 0)
+		write(1, "1", 1);
 	return (res1 + res2);
 }
 
