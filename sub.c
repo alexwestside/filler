@@ -14,6 +14,8 @@ void ft_error(int error, int id)
 		ft_printf("Incorrect PLATO inicialization!");
 	else if (error == 3 )
 		ft_printf("Incorrect TOKEN inicialization!");
+	else if (error == 4)
+		ft_printf("Line == NULL!");
 	exit(0);
 }
 

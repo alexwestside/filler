@@ -18,6 +18,14 @@ void valid_init_plato(char **s, t_map **plato, char *line)
 		ft_error(2, 0);
 }
 
+void player_identification(t_player **player, char *line)
+{
+	if (!strcmp((*player)->player1, "$$$ exec p1 : [./filler]"))
+		(*player)->player_id = 1;
+	else
+		(*player)->player_id = 2;
+}
+
 void valid_init_player(char **s, t_filler **filler)
 {
 	static int player = 1;
@@ -28,9 +36,10 @@ void valid_init_player(char **s, t_filler **filler)
 				if (!ft_strcmp(s[3], ":"))
 					if (isprint_str(s[3]))
 					{
-						player == 1 ? (*filler)->player1 = (*filler)->line : 0;
-						player == 2 ? (*filler)->player2 = (*filler)->line : 0;
+						player == 1 ? (*filler)->player->player1 = (*filler)->line : 0;
+						player == 2 ? (*filler)->player->player2 = (*filler)->line : 0;
 						player++;
+						player_identification(&((*filler)->player), (*filler)->line);
 					}
 					else
 						ft_error(1, player);
@@ -63,16 +72,20 @@ void valid_init_token(char **str, t_map **token, char *line)
 
 void valid_and_init(char **line, t_filler **filler)
 {
-	if (!ft_strcmp(line[0], "$$$"))
-		valid_init_player(line, filler);
-	else if (!ft_strcmp(line[0], "Plateau"))
-		valid_init_plato(line, &((*filler)->plato), (*filler)->line);
-	else if (isdigit_str(line[0], 0) && !line[1])
-		return  ;
-	else if (isdigit_str(line[0], 0) && line[1])
-		fill_plato(line[1], &((*filler)->plato));
-	else if (!ft_strcmp(line[0], "Piece"))
-		valid_init_token(line, &((*filler)->token), (*filler)->line);
-	else if (isprint_str(line[0]) && !line[1])
-		fill_token(line[0], &((*filler)->token));
+//	if (line)
+//	{
+		if (!ft_strcmp(line[0], "$$$"))
+			valid_init_player(line, filler);
+		else if (!ft_strcmp(line[0], "Plateau"))
+			valid_init_plato(line, &((*filler)->plato), (*filler)->line);
+		else if (isdigit_str(line[0], 0) && !line[1])
+			return;
+		else if (isdigit_str(line[0], 0) && line[1])
+			fill_plato(line[1], &((*filler)->plato));
+		else if (!ft_strcmp(line[0], "Piece"))
+			valid_init_token(line, &((*filler)->token), (*filler)->line);
+		else if (isprint_str(line[0]) && !line[1])
+			fill_token(line[0], &((*filler)->token));
+//	}
+//	ft_error(4, 0);
 }

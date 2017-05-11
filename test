@@ -1,4 +1,4 @@
-$$$ exec p1 : [user1]
+$$$ exec p1 : [./filler]
 $$$ exec p2 : [user2]
 Plateau 14 30:
     012345678901234567890123456789

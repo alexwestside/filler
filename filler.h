@@ -14,12 +14,19 @@ typedef struct		s_map
 	int 			n;
 }					t_map;
 
+typedef struct		s_player
+{
+	int				player_id;
+	char			*player1;
+	char			*player2;
+	char			p1;
+	char			p2;
+}					t_player;
 
 typedef struct		s_filler
 {
 	char			*line;
-	char			*player1;
-	char			*player2;
+	struct s_player *player;
 	struct s_map 	*plato;
 	struct s_map 	*token;
 	struct s_map	*place;
