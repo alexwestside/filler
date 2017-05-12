@@ -55,12 +55,16 @@ void init_dist(t_filler **filler);
 void place_token(t_filler **filler);
 
 void free_filler(t_filler **filler);
+void free_dist(t_filler **filler);
+void free_player(t_filler **filler);
+void free_plato(t_filler **filler);
+void free_token(t_filler **filler);
+void free_place(t_filler **filler);
 
 void ft_error(int error, int id);
 int isdigit_str(char *s, int id);
 int isprint_str(char *s);
 int ft_abs(int i, int x, int j ,int n);
-
 
 void print1(t_filler **filler);
 
