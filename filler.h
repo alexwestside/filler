@@ -6,6 +6,13 @@
 #include "libft/ft_printf.h"
 #include "libft/get_next_line.h"
 
+typedef struct		s_place
+{
+	int				x;
+	int 			n;
+	int				averege;
+}					t_place;
+
 typedef struct		s_map
 {
 	char			*info;
@@ -26,11 +33,11 @@ typedef struct		s_player
 typedef struct		s_filler
 {
 	char			*line;
-	int			**dist;
+	int				**dist;
 	struct s_player *player;
 	struct s_map 	*plato;
 	struct s_map 	*token;
-	struct s_map	*place;
+	struct s_place	*place;
 }					t_filler;
 
 void valid_and_init(char **line, t_filler **filler);
