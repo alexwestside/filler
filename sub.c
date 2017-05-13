@@ -78,3 +78,20 @@ void print1(t_filler **filler)
 		ft_printf("\n");
 	}
 }
+
+void print2(t_filler **filler)
+{
+	int i;
+	int j;
+
+	i = -1;
+	while (++i < (*filler)->plato->x)
+	{
+		j = -1;
+		while (++j < (*filler)->plato->n)
+		{
+			ft_printf("%3c", (*filler)->plato->map[i][j]);
+		}
+		ft_printf("\n");
+	}
+}

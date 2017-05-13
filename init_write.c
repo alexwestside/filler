@@ -3,8 +3,8 @@
 
 void filler_init(t_filler **filler)
 {
-	(*filler) = (t_filler *) malloc(sizeof(t_filler));
-	(*filler)->line = NULL;
+//	(*filler) = (t_filler *) malloc(sizeof(t_filler));
+//	(*filler)->line = NULL;
 	(*filler)->dist = NULL;
 	(*filler)->plato = (t_map *) malloc(sizeof(t_map));
 	(*filler)->plato->info = NULL;
