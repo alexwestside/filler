@@ -37,8 +37,12 @@ void valid_init_player(char **s, t_filler **filler)
 				if (!ft_strcmp(s[3], ":"))
 					if (isprint_str(s[3]))
 					{
-						player == 1 ? (*filler)->player->player1 = (*filler)->line : 0;
-						player == 2 ? (*filler)->player->player2 = (*filler)->line : 0;
+						if (!ft_strcmp(s[2], "p1"))
+							(*filler)->player->player1 = (*filler)->line;
+						else
+							(*filler)->player->player2 = (*filler)->line;
+//						player == 1 ? (*filler)->player->player1 = (*filler)->line : 0;
+//						player == 2 ? (*filler)->player->player2 = (*filler)->line : 0;
 						player++;
 						player_identification(&((*filler)->player));
 //						free_two_dem_str(s);

@@ -5,7 +5,7 @@ void free_filler(t_filler **filler)
 {
 	free((*filler)->line);
 	free_dist(filler);
-	free_player(filler);
+//	free_player(filler);
 	free_plato(filler);
 	free_token(filler);
 	free_place(filler);
@@ -51,6 +51,12 @@ int main()
 
 	filler = (t_filler *) malloc(sizeof(t_filler));
 	filler->line = NULL;
+	filler->player = (t_player *) malloc(sizeof(t_player));
+	filler->player->player_id = 0;
+	filler->player->player1 = NULL;
+	filler->player->player2 = NULL;
+	filler->player->p1 = 'O';
+	filler->player->p2 = 'X';
 
 	while (get_next_line(0, &filler->line))
 	{
