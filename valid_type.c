@@ -12,11 +12,11 @@ void valid_init_plato(char **s, t_map **plato, char *line)
 				free_two_dem_str(s);
 			}
 			else
-				ft_error(2, 0);
+				ft_error(2);
 		else
-			ft_error(2, 0);
+			ft_error(2);
 	else
-		ft_error(2, 0);
+		ft_error(2);
 }
 
 void player_identification(t_player **player)
@@ -29,8 +29,6 @@ void player_identification(t_player **player)
 
 void valid_init_player(char **s, t_filler **filler)
 {
-	static int player = 1;
-
 	if (!ft_strcmp(s[0], "$$$"))
 		if (!ft_strcmp(s[1], "exec"))
 			if (!ft_strcmp(s[2], "p1") || !ft_strcmp(s[2], "p2"))
@@ -41,20 +39,19 @@ void valid_init_player(char **s, t_filler **filler)
 							(*filler)->player->player1 = (*filler)->line;
 						else
 							(*filler)->player->player2 = (*filler)->line;
-						player++;
 						player_identification(&((*filler)->player));
 						free_two_dem_str(s);
 					}
 					else
-						ft_error(1, player);
+						ft_error(1);
 				else
-					ft_error(1, player);
+					ft_error(1);
 			else
-				ft_error(1, player);
+				ft_error(1);
 		else
-			ft_error(1, player);
+			ft_error(1);
 	else
-		ft_error(1, player);
+		ft_error(1);
 }
 
 void valid_init_token(char **str, t_map **token, char *line)
@@ -68,11 +65,11 @@ void valid_init_token(char **str, t_map **token, char *line)
 				free_two_dem_str(str);
 			}
 			else
-				ft_error(3, 0);
+				ft_error(3);
 		else
-			ft_error(3, 0);
+			ft_error(3);
 	else
-		ft_error(3, 0);
+		ft_error(3);
 }
 
 void valid_and_init(char **line, t_filler **filler)

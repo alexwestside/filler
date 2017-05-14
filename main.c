@@ -64,6 +64,6 @@ int main()
 	free_player(&filler);
 	free(filler);
 	filler = NULL;
-	sleep(500);
+//	sleep(500);
 	return (1);
 }

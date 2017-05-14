@@ -63,7 +63,7 @@ void				free_token(t_filler **filler);
 void				free_place(t_filler **filler);
 void				free_two_dem_str(char **s);
 
-void				ft_error(int error, int id);
+void				ft_error(int error);
 int					isdigit_str(char *s, int id);
 int					isprint_str(char *s);
 int					ft_abs(int i, int j);

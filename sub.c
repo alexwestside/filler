@@ -1,15 +1,10 @@
 
 #include "filler.h"
 
-void ft_error(int error, int id)
+void ft_error(int error)
 {
 	if (error == 1)
-	{
-		if (id == 4)
-			ft_printf("Incorrect PLAYER #1 inicialization!");
-		else
-			ft_printf("Incorrect PLAYER #2 inicialization!");
-	}
+		ft_printf("Incorrect PLAYER inicialization!");
 	else if (error == 2)
 		ft_printf("Incorrect PLATO inicialization!");
 	else if (error == 3)
