@@ -67,6 +67,7 @@ void				ft_error(int error);
 int					isdigit_str(char *s, int id);
 int					isprint_str(char *s);
 int					ft_abs(int i, int j);
+int					read_finish(t_filler *filler);
 
 void print1(t_filler **filler);
 void print2(t_filler **filler);

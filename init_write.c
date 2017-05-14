@@ -1,11 +1,11 @@
 
 #include "filler.h"
 
-void filler_init_0(t_filler **filler)
+void	filler_init_0(t_filler **filler)
 {
-	(*filler) = (t_filler *) malloc(sizeof(t_filler));
+	(*filler) = (t_filler *)malloc(sizeof(t_filler));
 	(*filler)->line = NULL;
-	(*filler)->player = (t_player *) malloc(sizeof(t_player));
+	(*filler)->player = (t_player *)malloc(sizeof(t_player));
 	(*filler)->player->player_id = 0;
 	(*filler)->player->player1 = NULL;
 	(*filler)->player->player2 = NULL;
@@ -13,26 +13,26 @@ void filler_init_0(t_filler **filler)
 	(*filler)->player->p2 = 'X';
 }
 
-void filler_init_1(t_filler **filler)
+void	filler_init_1(t_filler **filler)
 {
 	(*filler)->dist = NULL;
-	(*filler)->plato = (t_map *) malloc(sizeof(t_map));
+	(*filler)->plato = (t_map *)malloc(sizeof(t_map));
 	(*filler)->plato->info = NULL;
 	(*filler)->plato->map = NULL;
 	(*filler)->plato->x = 0;
 	(*filler)->plato->n = 0;
-	(*filler)->token = (t_map *) malloc(sizeof(t_map));
+	(*filler)->token = (t_map *)malloc(sizeof(t_map));
 	(*filler)->token->info = NULL;
 	(*filler)->token->map = NULL;
 	(*filler)->token->x = 0;
 	(*filler)->token->n = 0;
-	(*filler)->place = (t_place *) malloc(sizeof(t_place));
+	(*filler)->place = (t_place *)malloc(sizeof(t_place));
 	(*filler)->place->x = 0;
 	(*filler)->place->n = 0;
 	(*filler)->place->averege = 0;
 }
 
-void init_plato(t_map **plato, int x, int n)
+void	init_plato(t_map **plato, int x, int n)
 {
 	if (!((*plato)->x) || !((*plato)->n))
 	{
@@ -42,15 +42,15 @@ void init_plato(t_map **plato, int x, int n)
 	if (!((*plato)->map))
 	{
 		x++;
-		(*plato)->map = (char **) malloc(sizeof(char *) * x);
+		(*plato)->map = (char **)malloc(sizeof(char *) * x);
 		while (x--)
 			(*plato)->map[x] = NULL;
 	}
 }
 
-void fill_plato(char *line, t_map **plato)
+void	fill_plato(char *line, t_map **plato)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while ((*plato)->map[i])
@@ -58,7 +58,7 @@ void fill_plato(char *line, t_map **plato)
 	(*plato)->map[i] = line;
 }
 
-void init_token(t_map **token, int x, int n)
+void	init_token(t_map **token, int x, int n)
 {
 	if (!((*token)->x) || !((*token)->n))
 	{
@@ -68,15 +68,15 @@ void init_token(t_map **token, int x, int n)
 	if (!((*token)->map))
 	{
 		x++;
-		(*token)->map = (char **) malloc(sizeof(char *) * x);
+		(*token)->map = (char **)malloc(sizeof(char *) * x);
 		while (x--)
 			(*token)->map[x] = NULL;
 	}
 }
 
-void fill_token(char *line, t_map **token)
+void	fill_token(char *line, t_map **token)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while ((*token)->map[i])
@@ -84,16 +84,16 @@ void fill_token(char *line, t_map **token)
 	(*token)->map[i] = line;
 }
 
-void init_dist(t_filler **filler)
+void	init_dist(t_filler **filler)
 {
-	int i;
+	int	i;
 
 	i = -1;
-	(*filler)->dist = (int **) malloc(sizeof(int *) * ((*filler)->plato->x + 1));
+	(*filler)->dist = (int **)malloc(sizeof(int *) * ((*filler)->plato->x + 1));
 	(*filler)->dist[(*filler)->plato->x] = NULL;
 	while (++i < (*filler)->plato->x)
 	{
-		(*filler)->dist[i] = (int *) malloc(sizeof(int) * (*filler)->plato->n);
+		(*filler)->dist[i] = (int *)malloc(sizeof(int) * (*filler)->plato->n);
 		ft_bzero((*filler)->dist[i], (size_t) (*filler)->plato->n * sizeof(int));
 	}
 }

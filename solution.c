@@ -1,10 +1,10 @@
 
 #include "filler.h"
 
-void fill_dist(t_filler **filler, int x, int n)
+void	fill_dist(t_filler **filler, int x, int n)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = -1;
 	while (++i < (*filler)->plato->x)
@@ -23,10 +23,10 @@ void fill_dist(t_filler **filler, int x, int n)
 	}
 }
 
-void find_place_on_plato(t_filler **filler)
+void	find_place_on_plato(t_filler **filler)
 {
-	int x;
-	int n;
+	int	x;
+	int	n;
 
 	x = -1;
 	while (++x < (*filler)->plato->x)
@@ -47,13 +47,13 @@ void find_place_on_plato(t_filler **filler)
 	}
 }
 
-void fill_place(t_filler **filler, int x, int n)
+void	fill_place(t_filler **filler, int x, int n)
 {
-	int i;
-	int j;
-	int _x;
-	int _n;
-	int averege;
+	int	i;
+	int	j;
+	int	_x;
+	int	_n;
+	int	averege;
 
 	averege = 0;
 	_x = x;
@@ -78,13 +78,13 @@ void fill_place(t_filler **filler, int x, int n)
 	}
 }
 
-int check_try_place(t_filler **filler, int x, int n)
+int		check_try_place(t_filler **filler, int x, int n)
 {
-	int i;
-	int j;
-	int place;
-	int _x;
-	int _n;
+	int	i;
+	int	j;
+	int	place;
+	int	_x;
+	int	_n;
 
 	_x = x;
 	place = 0;
@@ -97,13 +97,9 @@ int check_try_place(t_filler **filler, int x, int n)
 		{
 			if (_x < (*filler)->plato->x && _n < (*filler)->plato->n)
 			{
-				if ((*filler)->token->map[i][j] == '*' && (*filler)->plato->map[_x][_n] ==
-														  ((*filler)->player->player_id == 1 ? (*filler)->player->p1
-																							 : (*filler)->player->p2))
+				if ((*filler)->token->map[i][j] == '*' && (*filler)->plato->map[_x][_n] == ((*filler)->player->player_id == 1 ? (*filler)->player->p1 : (*filler)->player->p2))
 					place++;
-				if ((*filler)->token->map[i][j] == '*' && (*filler)->plato->map[_x][_n] ==
-														  ((*filler)->player->player_id == 1 ? (*filler)->player->p2
-																							 : (*filler)->player->p1))
+				if ((*filler)->token->map[i][j] == '*' && (*filler)->plato->map[_x][_n] == ((*filler)->player->player_id == 1 ? (*filler)->player->p2 : (*filler)->player->p1))
 					return (0);
 				_n++;
 			}
@@ -115,10 +111,10 @@ int check_try_place(t_filler **filler, int x, int n)
 	return (place != 1 ? 0 : 1);
 }
 
-void try_place_on_plato(t_filler **filler)
+void	try_place_on_plato(t_filler **filler)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = -1;
 	while (++i < (*filler)->plato->x)
@@ -132,7 +128,7 @@ void try_place_on_plato(t_filler **filler)
 	}
 }
 
-void place_token(t_filler **filler)
+void	place_token(t_filler **filler)
 {
 	init_dist(filler);
 	find_place_on_plato(filler);

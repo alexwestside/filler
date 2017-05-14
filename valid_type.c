@@ -1,7 +1,7 @@
 
 #include "filler.h"
 
-void valid_init_plato(char **s, t_map **plato, char *line)
+void	valid_init_plato(char **s, t_map **plato, char *line)
 {
 	if (!ft_strcmp(s[0], "Plateau"))
 		if (isdigit_str(s[1], 0), 1)
@@ -19,7 +19,7 @@ void valid_init_plato(char **s, t_map **plato, char *line)
 		ft_error(2);
 }
 
-void player_identification(t_player **player)
+void	player_identification(t_player **player)
 {
 	if ((*player)->player1)
 		(*player)->player_id = 1;
@@ -27,7 +27,7 @@ void player_identification(t_player **player)
 		(*player)->player_id = 2;
 }
 
-void valid_init_player(char **s, t_filler **filler)
+void	valid_init_player(char **s, t_filler **filler)
 {
 	if (!ft_strcmp(s[0], "$$$"))
 		if (!ft_strcmp(s[1], "exec"))
@@ -54,7 +54,7 @@ void valid_init_player(char **s, t_filler **filler)
 		ft_error(1);
 }
 
-void valid_init_token(char **str, t_map **token, char *line)
+void	valid_init_token(char **str, t_map **token, char *line)
 {
 	if (!ft_strcmp(str[0], "Piece"))
 		if (isdigit_str(str[1], 1))
@@ -72,7 +72,7 @@ void valid_init_token(char **str, t_map **token, char *line)
 		ft_error(3);
 }
 
-void valid_and_init(char **line, t_filler **filler)
+void	valid_and_init(char **line, t_filler **filler)
 {
 //	if (line)
 //	{

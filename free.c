@@ -1,15 +1,15 @@
 
 #include "filler.h"
 
-void free_place(t_filler **filler)
+void	free_place(t_filler **filler)
 {
 	free((*filler)->place);
 	(*filler)->place = NULL;
 }
 
-void free_token(t_filler **filler)
+void	free_token(t_filler **filler)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while ((*filler)->token->map[i])
@@ -25,9 +25,9 @@ void free_token(t_filler **filler)
 	(*filler)->token = NULL;
 }
 
-void free_plato(t_filler **filler)
+void	free_plato(t_filler **filler)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while ((*filler)->plato->map[i])
@@ -43,7 +43,7 @@ void free_plato(t_filler **filler)
 	(*filler)->plato = NULL;
 }
 
-void free_player(t_filler **filler)
+void	free_player(t_filler **filler)
 {
 	free((*filler)->player->player1);
 	free((*filler)->player->player2);
@@ -51,9 +51,9 @@ void free_player(t_filler **filler)
 	(*filler)->player = NULL;
 }
 
-void free_dist(t_filler **filler)
+void	free_dist(t_filler **filler)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while ((*filler)->dist[i])
@@ -65,3 +65,23 @@ void free_dist(t_filler **filler)
 	(*filler)->dist = NULL;
 }
 
+void	free_two_dem_str(char **s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		free(s[i]);
+		i++;
+	}
+}
+
+void	free_filler(t_filler **filler)
+{
+	free((*filler)->line);
+	free_dist(filler);
+	free_plato(filler);
+	free_token(filler);
+	free_place(filler);
+}

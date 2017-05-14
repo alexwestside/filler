@@ -1,7 +1,7 @@
 
 #include "filler.h"
 
-void ft_error(int error)
+void	ft_error(int error)
 {
 	if (error == 1)
 		ft_printf("Incorrect PLAYER inicialization!");
@@ -14,10 +14,10 @@ void ft_error(int error)
 	exit(0);
 }
 
-int isdigit_str(char *s, int id)
+int		isdigit_str(char *s, int id)
 {
-	char *p;
-	char *p1;
+	char	*p;
+	char	*p1;
 
 	p1 = NULL;
 	p = s;
@@ -32,9 +32,9 @@ int isdigit_str(char *s, int id)
 	return (1);
 }
 
-int isprint_str(char *s)
+int		isprint_str(char *s)
 {
-	char *p;
+	char	*p;
 
 	p = s;
 	while (*p)
@@ -63,6 +63,22 @@ void print1(t_filler **filler)
 	}
 }
 
+int		read_finish(t_filler *filler)
+{
+	if (filler->token)
+	{
+		if (filler->token->info)
+		{
+			if (filler->token->map)
+			{
+				if (filler->token->map[filler->token->x - 1])
+					return (1);
+			}
+		}
+	}
+	return (0);
+}
+
 void print2(t_filler **filler)
 {
 	int i;
@@ -80,7 +96,7 @@ void print2(t_filler **filler)
 	}
 }
 
-int ft_abs(int i, int j)
+int		ft_abs(int i, int j)
 {
 	return ((i - j) < 0 ? (i - j) * -1 : (i - j));
 }
