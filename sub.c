@@ -12,7 +12,7 @@ void ft_error(int error, int id)
 	}
 	else if (error == 2)
 		ft_printf("Incorrect PLATO inicialization!");
-	else if (error == 3 )
+	else if (error == 3)
 		ft_printf("Incorrect TOKEN inicialization!");
 	else if (error == 4)
 		ft_printf("Line == NULL!");
@@ -50,17 +50,6 @@ int isprint_str(char *s)
 	}
 	return (1);
 }
-
-//int ft_abs(int i, int x, int j ,int n)
-//{
-//	int res1;
-//	int res2;
-//
-//	res1 = (i - x) < 0 ? (i - x) * -1 : (i - x);
-//	res2 = (j - n) < 0 ? (j - n) * -1 : (j - n);
-//	return (res1 + res2);
-//}
-
 
 void print1(t_filler **filler)
 {

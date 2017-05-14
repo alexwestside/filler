@@ -79,27 +79,27 @@ void valid_and_init(char **line, t_filler **filler)
 {
 //	if (line)
 //	{
-		if (!ft_strcmp(line[0], "$$$"))
-			valid_init_player(line, filler);
-		else if (!ft_strcmp(line[0], "Plateau"))
-			valid_init_plato(line, &((*filler)->plato), (*filler)->line);
-		else if (isdigit_str(line[0], 0) && !line[1])
-		{
-			free((*filler)->line);
-			return (free_two_dem_str(line));
-		}
-		else if (isdigit_str(line[0], 0) && line[1])
-		{
-			fill_plato(line[1], &((*filler)->plato));
-			free((*filler)->line);
-		}
-		else if (!ft_strcmp(line[0], "Piece"))
-			valid_init_token(line, &((*filler)->token), (*filler)->line);
-		else if (isprint_str(line[0]) && !line[1])
-		{
-			fill_token(line[0], &((*filler)->token));
+	if (!ft_strcmp(line[0], "$$$"))
+		valid_init_player(line, filler);
+	else if (!ft_strcmp(line[0], "Plateau"))
+		valid_init_plato(line, &((*filler)->plato), (*filler)->line);
+	else if (isdigit_str(line[0], 0) && !line[1])
+	{
+		free((*filler)->line);
+		return (free_two_dem_str(line));
+	}
+	else if (isdigit_str(line[0], 0) && line[1])
+	{
+		fill_plato(line[1], &((*filler)->plato));
+		free((*filler)->line);
+	}
+	else if (!ft_strcmp(line[0], "Piece"))
+		valid_init_token(line, &((*filler)->token), (*filler)->line);
+	else if (isprint_str(line[0]) && !line[1])
+	{
+		fill_token(line[0], &((*filler)->token));
 //			free((*filler)->line);
-		}
+	}
 //	}
 //	ft_error(4, 0);
 }

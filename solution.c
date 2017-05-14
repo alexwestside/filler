@@ -34,12 +34,14 @@ void find_place_on_plato(t_filler **filler)
 		n = -1;
 		while (++n < (*filler)->plato->n)
 		{
-			if ((*filler)->plato->map[x][n] == ((*filler)->player->player_id == 1 ? (*filler)->player->p2 : (*filler)->player->p1))
+			if ((*filler)->plato->map[x][n] ==
+				((*filler)->player->player_id == 1 ? (*filler)->player->p2 : (*filler)->player->p1))
 			{
 				(*filler)->dist[x][n] = -2;
 				fill_dist(filler, x, n);
 			}
-			if ((*filler)->plato->map[x][n] == ((*filler)->player->player_id == 1 ? (*filler)->player->p1 : (*filler)->player->p2))
+			if ((*filler)->plato->map[x][n] ==
+				((*filler)->player->player_id == 1 ? (*filler)->player->p1 : (*filler)->player->p2))
 				(*filler)->dist[x][n] = -1;
 		}
 	}
@@ -95,9 +97,13 @@ int check_try_place(t_filler **filler, int x, int n)
 		{
 			if (_x < (*filler)->plato->x && _n < (*filler)->plato->n)
 			{
-				if ((*filler)->token->map[i][j] == '*' && (*filler)->plato->map[_x][_n] == ((*filler)->player->player_id == 1 ? (*filler)->player->p1 : (*filler)->player->p2))
+				if ((*filler)->token->map[i][j] == '*' && (*filler)->plato->map[_x][_n] ==
+														  ((*filler)->player->player_id == 1 ? (*filler)->player->p1
+																							 : (*filler)->player->p2))
 					place++;
-				if ((*filler)->token->map[i][j] == '*' && (*filler)->plato->map[_x][_n] == ((*filler)->player->player_id == 1 ? (*filler)->player->p2 : (*filler)->player->p1))
+				if ((*filler)->token->map[i][j] == '*' && (*filler)->plato->map[_x][_n] ==
+														  ((*filler)->player->player_id == 1 ? (*filler)->player->p2
+																							 : (*filler)->player->p1))
 					return (0);
 				_n++;
 			}
