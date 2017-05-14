@@ -87,14 +87,16 @@ void	valid_and_init(char **line, t_filler **filler)
 	}
 	else if (isdigit_str(line[0], 0) && line[1])
 	{
-		fill_plato(line[1], &((*filler)->plato));
+//		fill_plato(line[1], &((*filler)->plato));
+		fill_plato_or_token(line[1], &((*filler)->plato));
 		free((*filler)->line);
 	}
 	else if (!ft_strcmp(line[0], "Piece"))
 		valid_init_token(line, &((*filler)->token), (*filler)->line);
 	else if (isprint_str(line[0]) && !line[1])
 	{
-		fill_token(line[0], &((*filler)->token));
+//		fill_token(line[0], &((*filler)->token));
+		fill_plato_or_token(line[0], &((*filler)->token));
 //			free((*filler)->line);
 	}
 //	}

@@ -1,7 +1,7 @@
 
 #include "filler.h"
 
-int	main()
+int	main(void)
 {
 	t_filler	*filler;
 	char		**s;

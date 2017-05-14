@@ -58,6 +58,16 @@ void	fill_plato(char *line, t_map **plato)
 	(*plato)->map[i] = line;
 }
 
+void fill_plato_or_token(char *line, t_map **plato_or_token)
+{
+	int	i;
+
+	i = 0;
+	while ((*plato_or_token)->map[i])
+		i++;
+	(*plato_or_token)->map[i] = line;
+}
+
 void	init_token(t_map **token, int x, int n)
 {
 	if (!((*token)->x) || !((*token)->n))
@@ -94,6 +104,6 @@ void	init_dist(t_filler **filler)
 	while (++i < (*filler)->plato->x)
 	{
 		(*filler)->dist[i] = (int *)malloc(sizeof(int) * (*filler)->plato->n);
-		ft_bzero((*filler)->dist[i], (size_t) (*filler)->plato->n * sizeof(int));
+		ft_bzero((*filler)->dist[i], (size_t)(*filler)->plato->n * sizeof(int));
 	}
 }
