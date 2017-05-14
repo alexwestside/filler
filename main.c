@@ -5,12 +5,9 @@ void free_filler(t_filler **filler)
 {
 	free((*filler)->line);
 	free_dist(filler);
-//	free_player(filler);
 	free_plato(filler);
 	free_token(filler);
 	free_place(filler);
-//	free(*filler);
-//	*filler = NULL;
 }
 
 void free_two_dem_str(char **s)
@@ -43,30 +40,20 @@ int read_finish(t_filler *filler)
 
 int main()
 {
-//	int fd = open("/nfs/2016/o/orizhiy/ClionProjects/filler/test2", O_RDONLY);
-
 	t_filler *filler;
 	char **s;
-	int i = 0;
+	int i;
 
-	filler = (t_filler *) malloc(sizeof(t_filler));
-	filler->line = NULL;
-	filler->player = (t_player *) malloc(sizeof(t_player));
-	filler->player->player_id = 0;
-	filler->player->player1 = NULL;
-	filler->player->player2 = NULL;
-	filler->player->p1 = 'O';
-	filler->player->p2 = 'X';
-
+	i = 0;
+	filler_init_0(&filler);
 	while (get_next_line(0, &filler->line))
 	{
 		if (!i)
-			filler_init(&filler);
+			filler_init_1(&filler);
 		i++;
 		s = ft_strsplit(filler->line, ' ');
 		valid_and_init(s, &filler);
 		free(s);
-//		valid_and_init(ft_strsplit(filler->line, ' '), &filler);
 		if (read_finish(filler))
 		{
 			place_token(&filler);
@@ -74,8 +61,9 @@ int main()
 			i = 0;
 		}
 	}
+	free_player(&filler);
 	free(filler);
 	filler = NULL;
-//	sleep(500);
+	sleep(500);
 	return (1);
 }

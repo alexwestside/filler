@@ -1,10 +1,20 @@
 
 #include "filler.h"
 
-void filler_init(t_filler **filler)
+void filler_init_0(t_filler **filler)
 {
-//	(*filler) = (t_filler *) malloc(sizeof(t_filler));
-//	(*filler)->line = NULL;
+	(*filler) = (t_filler *) malloc(sizeof(t_filler));
+	(*filler)->line = NULL;
+	(*filler)->player = (t_player *) malloc(sizeof(t_player));
+	(*filler)->player->player_id = 0;
+	(*filler)->player->player1 = NULL;
+	(*filler)->player->player2 = NULL;
+	(*filler)->player->p1 = 'O';
+	(*filler)->player->p2 = 'X';
+}
+
+void filler_init_1(t_filler **filler)
+{
 	(*filler)->dist = NULL;
 	(*filler)->plato = (t_map *) malloc(sizeof(t_map));
 	(*filler)->plato->info = NULL;
@@ -20,12 +30,6 @@ void filler_init(t_filler **filler)
 	(*filler)->place->x = 0;
 	(*filler)->place->n = 0;
 	(*filler)->place->averege = 0;
-//	(*filler)->player = (t_player *) malloc(sizeof(t_player));
-//	(*filler)->player->player_id = 0;
-//	(*filler)->player->player1 = NULL;
-//	(*filler)->player->player2 = NULL;
-//	(*filler)->player->p1 = 'O';
-//	(*filler)->player->p2 = 'X';
 }
 
 void init_plato(t_map **plato, int x, int n)
@@ -92,5 +96,4 @@ void init_dist(t_filler **filler)
 		(*filler)->dist[i] = (int *) malloc(sizeof(int) * (*filler)->plato->n);
 		ft_bzero((*filler)->dist[i], (size_t) (*filler)->plato->n * sizeof(int));
 	}
-//	print1(filler);
 }

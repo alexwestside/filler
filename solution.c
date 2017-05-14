@@ -13,15 +13,14 @@ void fill_dist(t_filler **filler, int x, int n)
 		while (++j < (*filler)->plato->n)
 		{
 			if ((*filler)->dist[i][j] == 0)
-				(*filler)->dist[i][j] = /*ft_abs(i, x, j ,n)*/ft_abs(i, x) + ft_abs(j, n);
+				(*filler)->dist[i][j] = ft_abs(i, x) + ft_abs(j, n);
 			else if ((*filler)->dist[i][j] > 0)
 			{
-				if ((*filler)->dist[i][j] >= /*ft_abs(i, x, j, n)*/ft_abs(i, x) + ft_abs(j, n))
-					(*filler)->dist[i][j] = /*ft_abs(i, x, j, n)*/ft_abs(i, x) + ft_abs(j, n);
+				if ((*filler)->dist[i][j] >= ft_abs(i, x) + ft_abs(j, n))
+					(*filler)->dist[i][j] = ft_abs(i, x) + ft_abs(j, n);
 			}
 		}
 	}
-//	print1(filler);
 }
 
 void find_place_on_plato(t_filler **filler)
@@ -30,8 +29,6 @@ void find_place_on_plato(t_filler **filler)
 	int n;
 
 	x = -1;
-//	print1(filler);
-//	print2(filler);
 	while (++x < (*filler)->plato->x)
 	{
 		n = -1;
@@ -109,10 +106,7 @@ int check_try_place(t_filler **filler, int x, int n)
 		}
 		_x++;
 	}
-	if (place != 1)
-		return (0);
-	else
-		return (1);
+	return (place != 1 ? 0 : 1);
 }
 
 void try_place_on_plato(t_filler **filler)
@@ -137,9 +131,5 @@ void place_token(t_filler **filler)
 	init_dist(filler);
 	find_place_on_plato(filler);
 	try_place_on_plato(filler);
-
-//	print1(filler);
-//	print2(filler);
-
 	ft_printf("%d %d\n", (*filler)->place->x, (*filler)->place->n);
 }

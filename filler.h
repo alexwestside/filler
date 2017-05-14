@@ -45,7 +45,8 @@ void valid_init_player(char **s, t_filler **filler);
 void valid_init_plato(char **s, t_map **plato, char *line);
 void valid_init_token(char **str, t_map **token, char *line);
 
-void filler_init(t_filler **filler);
+void filler_init_0(t_filler **filler);
+void filler_init_1(t_filler **filler);
 void init_plato(t_map **plato, int x, int n);
 void fill_plato(char *line, t_map **plato);
 void init_token(t_map **token, int x, int n);
