@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/filler.dir/init_write.c.o"
   "CMakeFiles/filler.dir/solution.c.o"
   "CMakeFiles/filler.dir/free.c.o"
+  "CMakeFiles/filler.dir/sub_solution.c.o"
   "filler.pdb"
   "filler"
 )

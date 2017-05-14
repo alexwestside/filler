@@ -1,7 +1,29 @@
 
 #include "filler.h"
 
-int	main(void)
+int		ft_abs(int i, int j)
+{
+	return ((i - j) < 0 ? (i - j) * -1 : (i - j));
+}
+
+void	free_filler(t_filler **filler)
+{
+	free((*filler)->line);
+	free_dist(filler);
+	free_plato_or_token(&((*filler)->plato));
+	free_plato_or_token(&((*filler)->token));
+	free_place(filler);
+}
+
+void	place_token(t_filler **filler)
+{
+	init_dist(filler);
+	find_place_on_plato(filler);
+	try_place_on_plato(filler);
+	ft_printf("%d %d\n", (*filler)->place->x, (*filler)->place->n);
+}
+
+int		main(void)
 {
 	t_filler	*filler;
 	char		**s;

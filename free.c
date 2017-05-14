@@ -7,7 +7,7 @@ void	free_place(t_filler **filler)
 	(*filler)->place = NULL;
 }
 
-void free_plato_or_token(t_map **plato_or_token)
+void	free_plato_or_token(t_map **plato_or_token)
 {
 	int	i;
 
@@ -22,8 +22,7 @@ void free_plato_or_token(t_map **plato_or_token)
 	free((*plato_or_token)->info);
 	(*plato_or_token)->info = NULL;
 	free(*plato_or_token);
-	(*plato_or_token)= NULL;
-
+	(*plato_or_token) = NULL;
 }
 
 void	free_player(t_filler **filler)
@@ -58,13 +57,4 @@ void	free_two_dem_str(char **s)
 		free(s[i]);
 		i++;
 	}
-}
-
-void	free_filler(t_filler **filler)
-{
-	free((*filler)->line);
-	free_dist(filler);
-	free_plato_or_token(&((*filler)->plato));
-	free_plato_or_token(&((*filler)->token));
-	free_place(filler);
 }

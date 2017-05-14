@@ -258,6 +258,33 @@ sub.c.s:
 	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/sub.c.s
 .PHONY : sub.c.s
 
+sub_solution.o: sub_solution.c.o
+
+.PHONY : sub_solution.o
+
+# target to build an object file
+sub_solution.c.o:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/sub_solution.c.o
+.PHONY : sub_solution.c.o
+
+sub_solution.i: sub_solution.c.i
+
+.PHONY : sub_solution.i
+
+# target to preprocess a source file
+sub_solution.c.i:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/sub_solution.c.i
+.PHONY : sub_solution.c.i
+
+sub_solution.s: sub_solution.c.s
+
+.PHONY : sub_solution.s
+
+# target to generate assembly for a file
+sub_solution.c.s:
+	$(MAKE) -f CMakeFiles/filler.dir/build.make CMakeFiles/filler.dir/sub_solution.c.s
+.PHONY : sub_solution.c.s
+
 valid_type.o: valid_type.c.o
 
 .PHONY : valid_type.o
@@ -309,6 +336,9 @@ help:
 	@echo "... sub.o"
 	@echo "... sub.i"
 	@echo "... sub.s"
+	@echo "... sub_solution.o"
+	@echo "... sub_solution.i"
+	@echo "... sub_solution.s"
 	@echo "... valid_type.o"
 	@echo "... valid_type.i"
 	@echo "... valid_type.s"

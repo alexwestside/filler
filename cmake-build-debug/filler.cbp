@@ -100,6 +100,9 @@
 		<Unit filename="/nfs/2016/o/orizhiy/ClionProjects/filler/sub.c">
 			<Option target="filler"/>
 		</Unit>
+		<Unit filename="/nfs/2016/o/orizhiy/ClionProjects/filler/sub_solution.c">
+			<Option target="filler"/>
+		</Unit>
 		<Unit filename="/nfs/2016/o/orizhiy/ClionProjects/filler/valid_type.c">
 			<Option target="filler"/>
 		</Unit>

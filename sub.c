@@ -46,23 +46,6 @@ int		isprint_str(char *s)
 	return (1);
 }
 
-void print1(t_filler **filler)
-{
-	int i;
-	int j;
-
-	i = -1;
-	while (++i < (*filler)->plato->x)
-	{
-		j = -1;
-		while (++j < (*filler)->plato->n)
-		{
-			ft_printf("%3d", (*filler)->dist[i][j]);
-		}
-		ft_printf("\n");
-	}
-}
-
 int		read_finish(t_filler *filler)
 {
 	if (filler->token)
@@ -79,24 +62,9 @@ int		read_finish(t_filler *filler)
 	return (0);
 }
 
-void print2(t_filler **filler)
+void	fill_in_place(t_filler **filler, int averege, int n, int x)
 {
-	int i;
-	int j;
-
-	i = -1;
-	while (++i < (*filler)->plato->x)
-	{
-		j = -1;
-		while (++j < (*filler)->plato->n)
-		{
-			ft_printf("%3c", (*filler)->plato->map[i][j]);
-		}
-		ft_printf("\n");
-	}
-}
-
-int		ft_abs(int i, int j)
-{
-	return ((i - j) < 0 ? (i - j) * -1 : (i - j));
+	(*filler)->place->averege = averege;
+	(*filler)->place->n = n;
+	(*filler)->place->x = x;
 }

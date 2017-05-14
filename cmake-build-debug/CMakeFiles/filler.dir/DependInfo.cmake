@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/nfs/2016/o/orizhiy/ClionProjects/filler/main.c" "/nfs/2016/o/orizhiy/ClionProjects/filler/cmake-build-debug/CMakeFiles/filler.dir/main.c.o"
   "/nfs/2016/o/orizhiy/ClionProjects/filler/solution.c" "/nfs/2016/o/orizhiy/ClionProjects/filler/cmake-build-debug/CMakeFiles/filler.dir/solution.c.o"
   "/nfs/2016/o/orizhiy/ClionProjects/filler/sub.c" "/nfs/2016/o/orizhiy/ClionProjects/filler/cmake-build-debug/CMakeFiles/filler.dir/sub.c.o"
+  "/nfs/2016/o/orizhiy/ClionProjects/filler/sub_solution.c" "/nfs/2016/o/orizhiy/ClionProjects/filler/cmake-build-debug/CMakeFiles/filler.dir/sub_solution.c.o"
   "/nfs/2016/o/orizhiy/ClionProjects/filler/valid_type.c" "/nfs/2016/o/orizhiy/ClionProjects/filler/cmake-build-debug/CMakeFiles/filler.dir/valid_type.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")

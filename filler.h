@@ -52,6 +52,12 @@ void				fill_plato_or_token(char *line, t_map **plato_or_token);
 void				init_dist(t_filler **filler);
 
 void				place_token(t_filler **filler);
+void	try_place_on_plato(t_filler **filler);
+int		check_try_place(t_filler **filler, int x, int n);
+void	fill_place(t_filler **filler, int x, int n);
+void	find_place_on_plato(t_filler **filler);
+void	fill_dist(t_filler **filler, int x, int n);
+void fill_in_place(t_filler **filler, int averege, int n, int x);
 
 void				free_filler(t_filler **filler);
 void				free_dist(t_filler **filler);
@@ -65,9 +71,5 @@ int					isdigit_str(char *s, int id);
 int					isprint_str(char *s);
 int					ft_abs(int i, int j);
 int					read_finish(t_filler *filler);
-
-void print1(t_filler **filler);
-void print2(t_filler **filler);
-
 
 #endif //FILLER_FILLER_H
