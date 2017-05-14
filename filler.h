@@ -66,7 +66,8 @@ void free_two_dem_str(char **s);
 void ft_error(int error, int id);
 int isdigit_str(char *s, int id);
 int isprint_str(char *s);
-int ft_abs(int i, int x, int j ,int n);
+//int ft_abs(int i, int x, int j ,int n);
+int ft_abs(int i, int j);
 
 void print1(t_filler **filler);
 void print2(t_filler **filler);

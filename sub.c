@@ -51,15 +51,15 @@ int isprint_str(char *s)
 	return (1);
 }
 
-int ft_abs(int i, int x, int j ,int n)
-{
-	int res1;
-	int res2;
-
-	res1 = (i - x) < 0 ? (i - x) * -1 : (i - x);
-	res2 = (j - n) < 0 ? (j - n) * -1 : (j - n);
-	return (res1 + res2);
-}
+//int ft_abs(int i, int x, int j ,int n)
+//{
+//	int res1;
+//	int res2;
+//
+//	res1 = (i - x) < 0 ? (i - x) * -1 : (i - x);
+//	res2 = (j - n) < 0 ? (j - n) * -1 : (j - n);
+//	return (res1 + res2);
+//}
 
 
 void print1(t_filler **filler)
@@ -94,4 +94,9 @@ void print2(t_filler **filler)
 		}
 		ft_printf("\n");
 	}
+}
+
+int ft_abs(int i, int j)
+{
+	return ((i - j) < 0 ? (i - j) * -1 : (i - j));
 }

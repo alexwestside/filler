@@ -13,11 +13,11 @@ void fill_dist(t_filler **filler, int x, int n)
 		while (++j < (*filler)->plato->n)
 		{
 			if ((*filler)->dist[i][j] == 0)
-				(*filler)->dist[i][j] = ft_abs(i, x, j ,n);
+				(*filler)->dist[i][j] = /*ft_abs(i, x, j ,n)*/ft_abs(i, x) + ft_abs(j, n);
 			else if ((*filler)->dist[i][j] > 0)
 			{
-				if ((*filler)->dist[i][j] >= ft_abs(i, x, j, n))
-					(*filler)->dist[i][j] = ft_abs(i, x, j, n);
+				if ((*filler)->dist[i][j] >= /*ft_abs(i, x, j, n)*/ft_abs(i, x) + ft_abs(j, n))
+					(*filler)->dist[i][j] = /*ft_abs(i, x, j, n)*/ft_abs(i, x) + ft_abs(j, n);
 			}
 		}
 	}
