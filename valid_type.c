@@ -4,8 +4,8 @@
 void	valid_init_plato(char **s, t_map **plato, char *line)
 {
 	if (!ft_strcmp(s[0], "Plateau"))
-		if (isdigit_str(s[1], 0), 1)
-			if (isdigit_str(s[2], 0), 2)
+		if (isdigit_str(s[1], 1))
+			if (isdigit_str(s[2], 2))
 			{
 				init_plato_or_token(plato, ft_atoi(s[1]), ft_atoi(s[2]));
 				(*plato)->info = line;

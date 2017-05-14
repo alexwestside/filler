@@ -56,8 +56,7 @@ void				place_token(t_filler **filler);
 void				free_filler(t_filler **filler);
 void				free_dist(t_filler **filler);
 void				free_player(t_filler **filler);
-void				free_plato(t_filler **filler);
-void				free_token(t_filler **filler);
+void				free_plato_or_token(t_map **plato_or_token);
 void				free_place(t_filler **filler);
 void				free_two_dem_str(char **s);
 

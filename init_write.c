@@ -32,7 +32,7 @@ void	filler_init_1(t_filler **filler)
 	(*filler)->place->averege = 0;
 }
 
-void fill_plato_or_token(char *line, t_map **plato_or_token)
+void	fill_plato_or_token(char *line, t_map **plato_or_token)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ void fill_plato_or_token(char *line, t_map **plato_or_token)
 	(*plato_or_token)->map[i] = line;
 }
 
-void init_plato_or_token(t_map **plato_or_token, int x, int n)
+void	init_plato_or_token(t_map **plato_or_token, int x, int n)
 {
 	{
 		if (!((*plato_or_token)->x) || !((*plato_or_token)->n))
