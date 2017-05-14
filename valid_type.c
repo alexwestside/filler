@@ -7,7 +7,7 @@ void	valid_init_plato(char **s, t_map **plato, char *line)
 		if (isdigit_str(s[1], 0), 1)
 			if (isdigit_str(s[2], 0), 2)
 			{
-				init_plato(plato, ft_atoi(s[1]), ft_atoi(s[2]));
+				init_plato_or_token(plato, ft_atoi(s[1]), ft_atoi(s[2]));
 				(*plato)->info = line;
 				free_two_dem_str(s);
 			}
@@ -60,7 +60,7 @@ void	valid_init_token(char **str, t_map **token, char *line)
 		if (isdigit_str(str[1], 1))
 			if (isdigit_str(str[2], 2))
 			{
-				init_token(token, ft_atoi(str[1]), ft_atoi(str[2]));
+				init_plato_or_token(token, ft_atoi(str[1]), ft_atoi(str[2]));
 				(*token)->info = line;
 				free_two_dem_str(str);
 			}
@@ -87,7 +87,6 @@ void	valid_and_init(char **line, t_filler **filler)
 	}
 	else if (isdigit_str(line[0], 0) && line[1])
 	{
-//		fill_plato(line[1], &((*filler)->plato));
 		fill_plato_or_token(line[1], &((*filler)->plato));
 		free((*filler)->line);
 	}
@@ -95,7 +94,6 @@ void	valid_and_init(char **line, t_filler **filler)
 		valid_init_token(line, &((*filler)->token), (*filler)->line);
 	else if (isprint_str(line[0]) && !line[1])
 	{
-//		fill_token(line[0], &((*filler)->token));
 		fill_plato_or_token(line[0], &((*filler)->token));
 //			free((*filler)->line);
 	}

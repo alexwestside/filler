@@ -32,32 +32,6 @@ void	filler_init_1(t_filler **filler)
 	(*filler)->place->averege = 0;
 }
 
-void	init_plato(t_map **plato, int x, int n)
-{
-	if (!((*plato)->x) || !((*plato)->n))
-	{
-		(*plato)->x = x;
-		(*plato)->n = n;
-	}
-	if (!((*plato)->map))
-	{
-		x++;
-		(*plato)->map = (char **)malloc(sizeof(char *) * x);
-		while (x--)
-			(*plato)->map[x] = NULL;
-	}
-}
-
-void	fill_plato(char *line, t_map **plato)
-{
-	int	i;
-
-	i = 0;
-	while ((*plato)->map[i])
-		i++;
-	(*plato)->map[i] = line;
-}
-
 void fill_plato_or_token(char *line, t_map **plato_or_token)
 {
 	int	i;
@@ -68,30 +42,22 @@ void fill_plato_or_token(char *line, t_map **plato_or_token)
 	(*plato_or_token)->map[i] = line;
 }
 
-void	init_token(t_map **token, int x, int n)
+void init_plato_or_token(t_map **plato_or_token, int x, int n)
 {
-	if (!((*token)->x) || !((*token)->n))
 	{
-		(*token)->x = x;
-		(*token)->n = n;
+		if (!((*plato_or_token)->x) || !((*plato_or_token)->n))
+		{
+			(*plato_or_token)->x = x;
+			(*plato_or_token)->n = n;
+		}
+		if (!((*plato_or_token)->map))
+		{
+			x++;
+			(*plato_or_token)->map = (char **)malloc(sizeof(char *) * x);
+			while (x--)
+				(*plato_or_token)->map[x] = NULL;
+		}
 	}
-	if (!((*token)->map))
-	{
-		x++;
-		(*token)->map = (char **)malloc(sizeof(char *) * x);
-		while (x--)
-			(*token)->map[x] = NULL;
-	}
-}
-
-void	fill_token(char *line, t_map **token)
-{
-	int	i;
-
-	i = 0;
-	while ((*token)->map[i])
-		i++;
-	(*token)->map[i] = line;
 }
 
 void	init_dist(t_filler **filler)

@@ -47,13 +47,8 @@ void				valid_init_token(char **str, t_map **token, char *line);
 
 void				filler_init_0(t_filler **filler);
 void				filler_init_1(t_filler **filler);
-void				init_plato(t_map **plato, int x, int n);
-void				fill_plato(char *line, t_map **plato);
-void				init_token(t_map **token, int x, int n);
-void				fill_token(char *line, t_map **token);
-
-void fill_plato_or_token(char *line, t_map **plato_or_token);
-
+void				init_plato_or_token(t_map **plato_or_token, int x, int n);
+void				fill_plato_or_token(char *line, t_map **plato_or_token);
 void				init_dist(t_filler **filler);
 
 void				place_token(t_filler **filler);
