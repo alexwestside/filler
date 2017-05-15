@@ -15,6 +15,7 @@ int		main(void)
 		i++;
 		s = ft_strsplit(filler->line, ' ');
 		valid_and_init(s, &filler);
+		free(s);
 		if (read_finish(filler))
 		{
 			place_token(&filler);
