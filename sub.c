@@ -4,13 +4,13 @@
 void	ft_error(int error)
 {
 	if (error == 1)
-		ft_printf("Incorrect PLAYER inicialization!");
+		ft_printf("Incorrect PLAYER inicialization!\n");
 	else if (error == 2)
-		ft_printf("Incorrect PLATO inicialization!");
+		ft_printf("Incorrect PLATO inicialization!\n");
 	else if (error == 3)
-		ft_printf("Incorrect TOKEN inicialization!");
+		ft_printf("Incorrect TOKEN inicialization!\n");
 	else if (error == 4)
-		ft_printf("Line == NULL!");
+		ft_printf("No DATA input!\n");
 	exit(0);
 }
 
@@ -62,9 +62,7 @@ int		read_finish(t_filler *filler)
 	return (0);
 }
 
-void	fill_in_place(t_filler **filler, int averege, int n, int x)
+int		ft_abs(int i, int j)
 {
-	(*filler)->place->averege = averege;
-	(*filler)->place->n = n;
-	(*filler)->place->x = x;
+	return ((i - j) < 0 ? (i - j) * -1 : (i - j));
 }

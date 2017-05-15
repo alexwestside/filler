@@ -77,39 +77,31 @@ void	fill_place(t_filler **filler, int x, int n)
 		fill_in_place(filler, averege, n, x);
 }
 
-int		check_try_place(t_filler **filler, int x, int n)
+int		check_try_place(t_filler **filler, int x, int n, int place)
 {
 	int	i;
 	int	j;
-	int	place;
-	int	x_;
-	int	n_;
 
-	x_ = x;
-	place = 0;
+	(*filler)->x_ = x;
 	i = -1;
 	while (++i < (*filler)->token->x)
 	{
 		j = -1;
-		n_ = n;
+		(*filler)->n_ = n;
 		while (++j < (*filler)->token->n)
 		{
-			if (x_ < (*filler)->plato->x && n_ < (*filler)->plato->n)
+			if ((*filler)->x_ < (*filler)->plato->x &&
+					(*filler)->n_ < (*filler)->plato->n)
 			{
-				if ((*filler)->token->map[i][j] == '*' &&
-		(*filler)->plato->map[x_][n_] == ((*filler)->player->player_id == 1 ?
-		(*filler)->player->p1 : (*filler)->player->p2))
-					place++;
-				if ((*filler)->token->map[i][j] == '*' &&
-		(*filler)->plato->map[x_][n_] == ((*filler)->player->player_id == 1 ?
-		(*filler)->player->p2 : (*filler)->player->p1))
+				(check_try_place_test(filler, i, j) == 1) ? place++ : 0;
+				if (check_try_place_test(filler, i, j) == 2)
 					return (0);
-				n_++;
+				(*filler)->n_++;
 			}
 			else
 				return (0);
 		}
-		x_++;
+		(*filler)->x_++;
 	}
 	return (place != 1 ? 0 : 1);
 }
@@ -125,7 +117,7 @@ void	try_place_on_plato(t_filler **filler)
 		j = -1;
 		while (++j < (*filler)->plato->n)
 		{
-			if (check_try_place(filler, i, j))
+			if (check_try_place(filler, i, j, 0))
 				fill_place(filler, i, j);
 		}
 	}

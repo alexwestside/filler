@@ -31,6 +31,12 @@ CMakeFiles/filler.dir/sub.c.o: ../libft/get_next_line.h
 CMakeFiles/filler.dir/sub.c.o: ../libft/libft.h
 CMakeFiles/filler.dir/sub.c.o: ../sub.c
 
+CMakeFiles/filler.dir/sub_solution.c.o: ../filler.h
+CMakeFiles/filler.dir/sub_solution.c.o: ../libft/ft_printf.h
+CMakeFiles/filler.dir/sub_solution.c.o: ../libft/get_next_line.h
+CMakeFiles/filler.dir/sub_solution.c.o: ../libft/libft.h
+CMakeFiles/filler.dir/sub_solution.c.o: ../sub_solution.c
+
 CMakeFiles/filler.dir/valid_type.c.o: ../filler.h
 CMakeFiles/filler.dir/valid_type.c.o: ../libft/ft_printf.h
 CMakeFiles/filler.dir/valid_type.c.o: ../libft/get_next_line.h

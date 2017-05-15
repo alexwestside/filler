@@ -1,24 +1,24 @@
 
 #ifndef FILLER_FILLER_H
-#define FILLER_FILLER_H
+# define FILLER_FILLER_H
 
-#include "libft/libft.h"
-#include "libft/ft_printf.h"
-#include "libft/get_next_line.h"
+# include "libft/libft.h"
+# include "libft/ft_printf.h"
+# include "libft/get_next_line.h"
 
 typedef struct		s_place
 {
 	int				x;
-	int 			n;
+	int				n;
 	int				averege;
 }					t_place;
 
 typedef struct		s_map
 {
 	char			*info;
-	char 			**map;
-	int 			x;
-	int 			n;
+	char			**map;
+	int				x;
+	int				n;
 }					t_map;
 
 typedef struct		s_player
@@ -35,9 +35,11 @@ typedef struct		s_filler
 	char			*line;
 	int				**dist;
 	struct s_player *player;
-	struct s_map 	*plato;
-	struct s_map 	*token;
+	struct s_map	*plato;
+	struct s_map	*token;
 	struct s_place	*place;
+	int				x_;
+	int				n_;
 }					t_filler;
 
 void				valid_and_init(char **line, t_filler **filler);
@@ -52,12 +54,13 @@ void				fill_plato_or_token(char *line, t_map **plato_or_token);
 void				init_dist(t_filler **filler);
 
 void				place_token(t_filler **filler);
-void	try_place_on_plato(t_filler **filler);
-int		check_try_place(t_filler **filler, int x, int n);
-void	fill_place(t_filler **filler, int x, int n);
-void	find_place_on_plato(t_filler **filler);
-void	fill_dist(t_filler **filler, int x, int n);
-void fill_in_place(t_filler **filler, int averege, int n, int x);
+void				try_place_on_plato(t_filler **filler);
+int					check_try_place(t_filler **filler, int x, int n, int place);
+void				fill_place(t_filler **filler, int x, int n);
+void				find_place_on_plato(t_filler **filler);
+void				fill_dist(t_filler **filler, int x, int n);
+void				fill_in_place(t_filler **filler, int averege, int n, int x);
+int					check_try_place_test(t_filler **filler, int i, int j);
 
 void				free_filler(t_filler **filler);
 void				free_dist(t_filler **filler);
@@ -72,4 +75,4 @@ int					isprint_str(char *s);
 int					ft_abs(int i, int j);
 int					read_finish(t_filler *filler);
 
-#endif //FILLER_FILLER_H
+#endif
